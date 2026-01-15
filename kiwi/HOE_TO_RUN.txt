@@ -1,0 +1,8 @@
+# open WSL, then:
+cd <desried location>
+sudo apt update
+sudo apt install build-essential clang flex bison llvm make
+make           # builds default target (kiwi_compiler)
+make ir        # generate output.ll
+make run       # build IR, compile, and run (if dependencies present)
+make clean

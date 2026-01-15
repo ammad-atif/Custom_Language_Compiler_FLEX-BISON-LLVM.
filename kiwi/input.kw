@@ -1,0 +1,66 @@
+a <- 11
+1213 -> b
+
+a <- b
+
+fn foo <- (f,g,h) @void ->
+   @? f g op >
+   YES: {
+        print "f is greater"
+   }
+   NO: {
+        print "g is greater"
+   } .endif
+
+    @loop (i){0,+1,10}
+    {
+        c <- i
+        f <- 5
+        @? c f op <
+        YES: {
+            print "Less than 5"
+        }
+        NO:{
+            print "Greater than 5"
+        } .endif
+    }   .endfor
+
+   ret
+nf
+
+@param fpp <- [a,b,c]
+
+fn foobar <- (@p fpp) @void ->
+    print a
+    print b
+    ret
+nf
+
+
+fn bar <- (i,j,k) @double ->
+    m <- 123213
+    n <- 121312
+    print k
+    ret <- 123
+nf
+
+@call foo(909,21,12)
+
+@? a b op >
+YES: {
+    print "A is smaller"
+    print a
+}  
+NO: {
+    print "B is smaller"
+    print b
+} .endif
+
+@array <int> t <2,2>
+
+0'0:t <- 1
+1'1:t <- 50
+
+printd 0'0:t
+
+printd 1'1:t
